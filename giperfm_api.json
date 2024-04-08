@@ -1,0 +1,1788 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "giperfm",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://sjuuafjnxswtdxyqhkhi.supabase.co"
+    },
+    {
+      "url": "PMAK-661132c8c354020001651883-XXXX"
+    }
+  ],
+  "paths": {
+    "/rest/v1/user_info": {
+      "get": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Get all Employees",
+        "description": "Get all Employees",
+        "operationId": "getAllEmployees",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.1"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "3"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "created_at"
+            }
+          },
+          {
+            "name": "created_at",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "gte.\"2022-04-01\""
+            }
+          },
+          {
+            "name": "position",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "like.*dev*"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get all Employees": {
+                  "value": ""
+                },
+                "Read about all people": {
+                  "value": ""
+                },
+                "Read about myself": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Employees"
+        ],
+        "summary": "Update Employee modification",
+        "description": "Update Employee modification",
+        "operationId": "updateEmployeeModification",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.2"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "example": "Глеб"
+                  }
+                }
+              },
+              "examples": {
+                "Update Employee modification": {
+                  "value": {
+                    "first_name": "Глеб"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/rest/v1/events": {
+      "get": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "get events",
+        "description": "get events",
+        "operationId": "getEvents",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.3"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "type_of_event",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.будущий"
+            }
+          },
+          {
+            "name": "creator",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.Наталья Оспенникова"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Read NOT creater's event": {
+                  "value": ""
+                },
+                "Read about past events": {
+                  "value": ""
+                },
+                "Read creater's event": {
+                  "value": ""
+                },
+                "Read creater's event Copy": {
+                  "value": ""
+                },
+                "get events": {
+                  "value": ""
+                },
+                "get events by id": {
+                  "value": ""
+                },
+                "get events with pagination": {
+                  "value": ""
+                },
+                "get events with sorting": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "create new events",
+        "description": "create new events",
+        "operationId": "createNewEvents",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Type of event": {
+                    "type": "string",
+                    "example": "будущий"
+                  },
+                  "creator": {
+                    "type": "string",
+                    "example": "Игорь Саперштейн"
+                  },
+                  "date": {
+                    "type": "string",
+                    "example": "2024-05-27"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "нужно провести мастер класс для студентов ИТ-11 и ИТ-9 по фронтед разработке"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "мастер класс для Ithub"
+                  },
+                  "place": {
+                    "type": "string",
+                    "example": "колледж Ithub"
+                  },
+                  "price": {
+                    "type": "string",
+                    "example": "200"
+                  },
+                  "regularity/not regularity": {
+                    "type": "string",
+                    "example": "False"
+                  },
+                  "time": {
+                    "type": "string",
+                    "example": "11:40:00"
+                  }
+                }
+              },
+              "examples": {
+                "Create creater's event": {
+                  "value": {
+                    "Type of event": "будущий",
+                    "creator": "Игорь Саперштейн",
+                    "date": "2024-05-27",
+                    "description": "нужно провести мастер класс для студентов ИТ-11 и ИТ-9 по фронтед разработке",
+                    "name": "мастер класс для Ithub",
+                    "place": "колледж Ithub",
+                    "price": "200",
+                    "regularity/not regularity": "False",
+                    "time": "11:40:00"
+                  }
+                },
+                "Create creater's event Copy": {
+                  "value": {
+                    "Type of event": "будущий",
+                    "creator": "Игорь Саперштейн",
+                    "date": "2024-05-27",
+                    "description": "нужно провести мастер класс для студентов ИТ-11 и ИТ-9 по фронтед разработке",
+                    "name": "мастер класс для Ithub",
+                    "place": "колледж Ithub",
+                    "price": "200",
+                    "regularity/not regularity": "False",
+                    "time": "11:40:00"
+                  }
+                },
+                "create new events": {
+                  "value": {
+                    "Type of event": "будущий",
+                    "creator": "Игорь Саперштейн",
+                    "date": "2024-05-27",
+                    "description": "нужно провести мастер класс для студентов ИТ-11 и ИТ-9 по фронтед разработке",
+                    "name": "мастер класс для Ithub",
+                    "place": "колледж Ithub",
+                    "price": "200",
+                    "regularity/not regularity": "False",
+                    "time": "11:40:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "delete events",
+        "description": "delete events",
+        "operationId": "deleteEvents",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.13"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "мастер класс для ItHub"
+                  }
+                }
+              },
+              "examples": {
+                "Delete creater's event": {
+                  "value": ""
+                },
+                "Delete creater's event Copy": {
+                  "value": ""
+                },
+                "delete events": {
+                  "value": {
+                    "name": "мастер класс для ItHub"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "409": {
+            "description": "Delete creater's event Copy",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870af54f1c5e05c3-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:12:51 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "15"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "23503"
+                    },
+                    "details": {
+                      "type": "string",
+                      "example": "Key (id)=(11) is still referenced from table \"events_people\"."
+                    },
+                    "hint": {
+                      "nullable": true,
+                      "example": null
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "update or delete on table \"events\" violates foreign key constraint \"public_event_people_event_id_fkey\" on table \"events_people\""
+                    }
+                  }
+                },
+                "examples": {
+                  "Delete creater's event Copy": {
+                    "value": {
+                      "code": "23503",
+                      "details": "Key (id)=(11) is still referenced from table \"events_people\".",
+                      "hint": null,
+                      "message": "update or delete on table \"events\" violates foreign key constraint \"public_event_people_event_id_fkey\" on table \"events_people\""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "update events",
+        "description": "update events",
+        "operationId": "updateEvents",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.13"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "мастер класс для ItHub"
+                  }
+                }
+              },
+              "examples": {
+                "Update creater's event": {
+                  "value": {
+                    "name": "мастер класс для ItHub"
+                  }
+                },
+                "Update creater's event Copy": {
+                  "value": {
+                    "name": "мастер класс для ItHub"
+                  }
+                },
+                "update events": {
+                  "value": {
+                    "name": "мастер класс для ItHub"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/rest/v1/events_people": {
+      "get": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "get events_people with sorting",
+        "description": "get events_people with sorting",
+        "operationId": "getEventsPeopleWithSorting",
+        "parameters": [
+          {
+            "name": "playerORcreator",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.player"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Read creater's event Copy 2": {
+                  "value": ""
+                },
+                "get events_people with sorting": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": " / Read creater's event Copy 2",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870ade983b8c1763-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Location": {
+                "schema": {
+                  "type": "string",
+                  "example": "/events_people"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "0-15/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 14:57:20 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "content-profile": {
+                "schema": {
+                  "type": "string",
+                  "example": "public"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "create new players",
+        "description": "create new players",
+        "operationId": "createNewPlayers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "event_id": {
+                    "type": "string",
+                    "example": "2"
+                  },
+                  "playerORcreator": {
+                    "type": "string",
+                    "example": "player"
+                  },
+                  "user_id": {
+                    "type": "string",
+                    "example": "1"
+                  }
+                }
+              },
+              "examples": {
+                "Create new players": {
+                  "value": {
+                    "event_id": "2",
+                    "playerORcreator": "player",
+                    "user_id": "1"
+                  }
+                },
+                "Create new players Copy": {
+                  "value": {
+                    "event_id": "2",
+                    "playerORcreator": "player",
+                    "user_id": "1"
+                  }
+                },
+                "create new players": {
+                  "value": {
+                    "event_id": "2",
+                    "player/creator": "player",
+                    "user_id": "1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "201": {
+            "description": "Create new players Copy",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870ae260ed46823e-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "*/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 14:59:55 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "5"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Delete new players",
+        "description": "Delete new players",
+        "operationId": "deleteNewPlayers",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.1"
+            }
+          },
+          {
+            "name": "event_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.2"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Delete new players": {
+                  "value": ""
+                },
+                "Delete new players Copy": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "description": "Delete new players Copy",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870ae303488d8281-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "*/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:00:21 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "update events_people",
+        "description": "update events_people",
+        "operationId": "updateEventsPeople",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.3"
+            }
+          },
+          {
+            "name": "user_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.1"
+            }
+          },
+          {
+            "name": "event_id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.2"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "playerORcreator": {
+                    "type": "string",
+                    "example": "creator"
+                  }
+                }
+              },
+              "examples": {
+                "Update new players": {
+                  "value": {
+                    "playerORcreator": "creator"
+                  }
+                },
+                "update events_people": {
+                  "value": {
+                    "playerORcreator": "creator"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          },
+          "204": {
+            "description": "Update new players",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870ae2db7830823e-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "0-0/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:00:15 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      }
+    },
+    "/rest/v1/products": {
+      "get": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Get all Products",
+        "description": "Get all Products",
+        "operationId": "getAllProducts",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.3"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "10"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5"
+            }
+          },
+          {
+            "name": "price<It.500",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "gte.1"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "price"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get Products by id": {
+                  "value": ""
+                },
+                "Get Products with pagination": {
+                  "value": ""
+                },
+                "Get Products with sorting": {
+                  "value": ""
+                },
+                "Get Products with sorting Copy": {
+                  "value": ""
+                },
+                "Get all Products": {
+                  "value": ""
+                },
+                "Read merch": {
+                  "value": ""
+                },
+                "Read merch Copy": {
+                  "value": ""
+                },
+                "Read merch to money": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": " / Read merch Copy",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870ae5660ab77004-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Location": {
+                "schema": {
+                  "type": "string",
+                  "example": "/products"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "0-17/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:01:59 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "content-profile": {
+                "schema": {
+                  "type": "string",
+                  "example": "public"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "2"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Create merch",
+        "description": "Create merch",
+        "operationId": "createMerch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "string",
+                    "example": "100"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "штаны"
+                  },
+                  "price": {
+                    "type": "string",
+                    "example": "100"
+                  }
+                }
+              },
+              "examples": {
+                "Create merch": {
+                  "value": {
+                    "count": "100",
+                    "name": "штаны",
+                    "price": "100"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create merch",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870aea28191a1fec-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "*/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:05:14 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "3"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Delete merch",
+        "description": "Delete merch",
+        "operationId": "deleteMerch",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.штаны"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {
+                "Delete merch": {
+                  "value": {}
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Delete merch",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870aeaf68f9220c9-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "*/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:05:47 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "3"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "products"
+        ],
+        "summary": "update Products",
+        "description": "update Products",
+        "operationId": "updateProducts",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "eq.8"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "string",
+                    "example": "150"
+                  }
+                }
+              },
+              "examples": {
+                "update Products": {
+                  "value": {
+                    "count": "150"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/rest/v1/orders": {
+      "get": {
+        "tags": [
+          "for admin"
+        ],
+        "summary": "Get all orders",
+        "description": "Get all orders",
+        "operationId": "getAllOrders",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get all orders": {
+                  "value": ""
+                },
+                "Read orders": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": " / Read about all people Copy",
+            "headers": {
+              "CF-Cache-Status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "CF-Ray": {
+                "schema": {
+                  "type": "string",
+                  "example": "870aebc4ef607fca-IAD"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Content-Location": {
+                "schema": {
+                  "type": "string",
+                  "example": "/orders"
+                }
+              },
+              "Content-Range": {
+                "schema": {
+                  "type": "string",
+                  "example": "0-3/*"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sun, 07 Apr 2024 15:06:20 GMT"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Strict-Transport-Security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=15552000; includeSubDomains"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "Accept-Encoding"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "content-profile": {
+                "schema": {
+                  "type": "string",
+                  "example": "public"
+                }
+              },
+              "sb-gateway-version": {
+                "schema": {
+                  "type": "string",
+                  "example": "1"
+                }
+              },
+              "x-envoy-upstream-service-time": {
+                "schema": {
+                  "type": "string",
+                  "example": "13"
+                }
+              }
+            },
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "for Empoyees"
+        ],
+        "summary": "post orders",
+        "description": "post orders",
+        "operationId": "postOrders",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "string",
+                    "example": "3"
+                  },
+                  "product_id": {
+                    "type": "string",
+                    "example": "1"
+                  },
+                  "user_id": {
+                    "type": "string",
+                    "example": "2"
+                  }
+                }
+              },
+              "examples": {
+                "Create new order": {
+                  "value": {
+                    "count": "3",
+                    "product_id": "1",
+                    "user_id": "2"
+                  }
+                },
+                "post orders": {
+                  "value": {
+                    "count": "2",
+                    "product_id": "2",
+                    "user_id": "4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/rest/v1/people": {
+      "get": {
+        "tags": [
+          "for Empoyees"
+        ],
+        "summary": "Read about people",
+        "description": "Read about people",
+        "operationId": "readAboutPeople",
+        "parameters": [
+          {
+            "name": "select",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "full_name,position"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Read about people": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "api",
+        "description": "api",
+        "operationId": "api",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "name": "apikey",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Employees"
+    },
+    {
+      "name": "events"
+    },
+    {
+      "name": "products"
+    },
+    {
+      "name": "orders"
+    },
+    {
+      "name": "for Empoyees"
+    },
+    {
+      "name": "for admin"
+    }
+  ]
+}
